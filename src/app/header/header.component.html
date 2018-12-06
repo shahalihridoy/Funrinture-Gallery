@@ -1,6 +1,6 @@
 <!-- HEADER -->
 <header>
-    
+
     <!-- TOP HEADER -->
     <div id="top-header">
         <div class="row">
@@ -19,17 +19,28 @@
 
             <!-- welcome note -->
             <div class="col-md-4 col-lg-4">
-                <span class="rigth">Welcome to Furniture Gallery</span>
+                <span class="right">Welcome to Furniture Gallery</span>
             </div>
             <!-- welcome note -->
 
             <!-- user account -->
             <div class="col-md-4">
-                <span><i class="fa fa-dollar"></i> USD</span>
-                <div class="user-account" mat-ripple>
-                    <span class="dropdown-toggle">
+
+                <span class="dropdown-toggle"><i class="fa fa-dollar"></i> USD</span>
+
+                <div class="btn-group icon-btn user-account" dropdown>
+                    <span id="button-basic" mat-ripple dropdownToggle type="button" class="dropdown-toggle"
+                        aria-controls="dropdown-basic">
                         <mat-icon class="mat-icon">person</mat-icon> My Account
                     </span>
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+                        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!-- /user account -->
@@ -56,8 +67,14 @@
                     <form>
                         <select class="input-select">
                             <option value="0">All Categories</option>
-                            <option value="1">Category 01</option>
-                            <option value="1">Category 02</option>
+                            <optgroup label="Electronics">
+                                <option value="1">Category 01</option>
+                                <option value="1">Category 02</option>
+                            </optgroup>
+                            <optgroup label="Accessories">
+                                <option value="1">Category 01</option>
+                                <option value="1">Category 02</option>
+                            </optgroup>
                         </select>
                         <input class="input" placeholder="Search here">
                         <button class="search-btn" mat-ripple>
@@ -70,12 +87,13 @@
 
             <!-- SHOPPING CART -->
             <div class="col-md-4">
-                <div dropdown mat-ripple>
-                    <span class="dropdown-toggle" id="drop-menu" dropdownToggle aria-controls="drop-menu">
+                <div class="btn-group icon-btn cart" dropdown>
+                    <span id="button-basic" mat-ripple dropdownToggle type="button" class="dropdown-toggle"
+                        aria-controls="dropdown-basic">
                         <mat-icon class="mat-icon">shopping_cart</mat-icon>
                         Shopping Cart
                     </span>
-                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="drop-menu">
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
                         <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
                         <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
                         <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
@@ -91,5 +109,33 @@
     </div>
     <!-- /MID HEADER -->
 
+
 </header>
 <!-- /HEADER -->
+
+
+<!-- NAVIGATION BAR -->
+<nav>
+    <ul>
+        <li  mat-ripple><a href="">home</a></li>
+        <li  mat-ripple><a href="">fashion</a></li>
+        <li  mat-ripple><a href="">jewelery</a></li>
+        <li  mat-ripple><a href="">electronics</a></li>
+        <li  mat-ripple><a href="">sports</a></li>
+        <li  mat-ripple><a href="">motor</a></li>
+        <li  mat-ripple><a href="">pages</a></li>
+        <li  mat-ripple><a href="">conatct</a></li>
+        
+        <li class="btn-group li" dropdown>
+                <a href id="basic-link" class="dropdown-toggle" dropdownToggle (click)="false"
+                   aria-controls="basic-link-dropdown" mat-ripple>shopping</a>
+                <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+                    role="menu" aria-labelledby="basic-link">
+                  <li *ngFor="let choice of items">
+                    <a class="dropdown-item" href="#">{{choice}}</a>
+                  </li>
+                </ul>
+            </li>
+    </ul>
+</nav>
+<!-- /NAVIGATION BAR -->

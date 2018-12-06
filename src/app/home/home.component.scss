@@ -1,0 +1,119 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+.main-slider {
+    display: block;
+    width: calc(100% - 40px);
+    height: 500px;
+    margin: 0px 20px;
+    margin-top: 15px;
+    @include mq(680px) {
+        height: cover;
+    }
+}
+
+// ngx-bootstrap doesn't support custom templates for carousel
+::ng-deep .carousel {
+    &:hover {
+        ::ng-deep .carousel-control-prev,
+        ::ng-deep .carousel-control-next {
+            display: block;
+        }
+    }
+    ::ng-deep .carousel-control-prev,
+    ::ng-deep .carousel-control-next {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0px 50px;
+        margin-top: 225px;
+        opacity: 1;
+        @include mq(680px) {
+            margin-right: 25px;
+            margin-left: 25px;
+        }
+        ::ng-deep .carousel-control-prev-icon,
+        ::ng-deep .carousel-control-next-icon {
+            background-color: $p-color; // background: url('http://www.clker.com/cliparts/U/Z/F/E/3/3/icon-next-blue-light-braun-hi.png') no-repeat;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-size: 60%;
+            @include drop-shadow;
+        }
+    }
+}
+
+// business policy
+.policy-info {
+    padding: 20px;
+    position: relative;
+    margin-top: 25px;
+    background: darken($color: $background, $amount: 3);
+    width: calc(100% - 40px);
+
+    .policy-icon {
+        display: inline-block;
+        font-size: 65px;
+        height: 65px;
+        width: 65px;
+        vertical-align: middle;
+
+        @include mq(680px) {
+            font-size: 45px;
+            height: 45px;
+            width: 45px;
+        }
+    }
+
+    .policy {
+        display: inline-block;
+        margin-top: 15px;
+        margin-left: 10px;
+        vertical-align: middle;
+        text-align: left;
+        width: calc(100% - 75px);
+
+        @include mq(680px) {
+            width: calc(100% - 55px);
+            p {
+                font-size: 13px;
+            }
+        }
+
+        span {
+            @include title-font;
+            text-transform: capitalize;
+        }
+        p {
+            word-wrap: break-word;
+        }
+    }
+}
+// business policy ends here
+
+
+// tiles of colleciton
+.tiles {
+    position: relative;
+    padding: 0px 20px;
+    margin-top: 25px;
+}
+// tiles of collection ends here
+
+
+// suggestion tab
+.suggestion {
+    position: relative;
+    margin: 0px 20px;
+    margin-top: 25px;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: $p-color;
+}
+
+::ng-deep .mat-tab-label .mat-tab-label-content {
+    @include title-font;
+}
+// suggestion tab ends here

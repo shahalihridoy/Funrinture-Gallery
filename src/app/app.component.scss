@@ -1,15 +1,2 @@
 @import '../sass/variables.scss';
 @import '../sass/mixins.scss';
-
-h1 {
-    @include font;
-    @include nav-shadow;
-}
-
-img {
-    @include nav-shadow;
-}
-
-button:hover {
-    @include nav-shadow;
-}

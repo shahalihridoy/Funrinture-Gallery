@@ -1,3 +1,114 @@
-<p>
-  home works!
-</p>
+<!-- top slider -->
+<carousel>
+    <slide *ngFor="let slide of slides; let index=index" class="test">
+        <img [src]="slide.image" class="main-slider" alt="image slide">
+        <div class="carousel-caption">
+            <h4>Slide {{index+1}}</h4>
+        </div>
+    </slide>
+</carousel>
+<!-- end of top slider -->
+
+<!-- business policy information -->
+<div class="container-fluid policy-info">
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <mat-icon class="policy-icon">
+                local_shipping
+            </mat-icon>
+            <div class="policy">
+                <span>Free Shipping</span>
+                <p>Free shipping within 24 hours for free</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <mat-icon class="policy-icon">
+                redeem
+            </mat-icon>
+            <div class="policy">
+                <span>Free Shipping</span>
+                <p>Free shipping within 24 hours for freeFree shipping within 24 hours for free Free shipping within 24
+                    hours for free</p>
+            </div>
+        </div>
+
+        <div class="w-100"></div>
+
+        <div class="col-md-6 col-lg-6">
+            <mat-icon class="policy-icon">
+                restore
+            </mat-icon>
+            <div class="policy">
+                <span>Free Shipping</span>
+                <p>Free shipping within 24 hours for free</p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <mat-icon class="policy-icon">
+                attach_money
+            </mat-icon>
+            <div class="policy">
+                <span>Free Shipping</span>
+                <p>Free shipping within 24 hours for free Free shipping within 24 hours for free</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of business policy information -->
+
+
+<!-- Tiles of Collection -->
+<div class="container-fluid tiles">
+    <div class="row no-gutters">
+        <div class="col-md-5">
+            <div class="row no-gutters">
+                <div class="col-md-12">
+                    <div style="margin:10px;height: 400px; background-color: red;">test</div>
+                </div>
+                <div class="col-6">
+                    <div style="margin:10px;height: 300px; background-color: red;">test</div>
+                </div>
+                <div class="col-6">
+                    <div style="margin:10px;height: 300px; background-color: red;">test</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <div style="margin:10px;height: 200px; background-color: red;">test</div>
+                </div>
+                <div class="col-6">
+                    <div style="margin:10px;height: 200px; background-color: red;">test</div>
+                </div>
+                <div class="col-md-12">
+                    <div style="margin:10px;height: 500px; background-color: red;">test</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Tiles of Collection -->
+
+
+<!-- top rated / sale / best for you -->
+<mat-tab-group mat-stretch-tabs class="suggestion">
+    <mat-tab label="First" mat-ripple>
+            <div style="margin:30px;height: 400px; background-color: red;">test</div>
+    </mat-tab>
+    <mat-tab label="Second" mat-ripple>
+            <div style="margin:10px;height: 400px; background-color: green;">test</div>
+    </mat-tab>
+    <mat-tab label="Third" mat-ripple>
+            <div style="margin:10px;height: 400px; background-color: purple;">test</div>
+    </mat-tab>
+    <mat-tab label="First" mat-ripple>
+            <div style="margin:10px;height: 400px; background-color: blue;">test</div>
+    </mat-tab>
+    <mat-tab label="Second" mat-ripple>
+            <div style="margin:10px;height: 400px; background-color: black;">test</div>
+    </mat-tab>
+    <mat-tab label="Third" mat-ripple>
+            <div style="margin:10px;height: 400px; background-color: gold;">test</div>
+    </mat-tab>
+</mat-tab-group>
