@@ -1,0 +1,27 @@
+@import '../../sass/variables.scss';
+@import '../../sass/mixins.scss';
+
+.custom-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background: yellowgreen;
+    width: 100%;
+
+    ::ng-deep .slide {
+        flex-grow: 1;
+        background: rgb(248, 142, 142);  
+        text-align: center;
+        
+        @include keyframe(right_to_left){
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        animation: right_to_left 5s ease-out;
+    }
+}

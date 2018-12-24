@@ -112,3 +112,148 @@
             <div style="margin:10px;height: 400px; background-color: gold;">test</div>
     </mat-tab>
 </mat-tab-group>
+
+
+
+<!-- small carousel with multiple items -->
+<div class="custom-carousel" #test>
+    <div class="content-box">
+        <div @fade class="item">One</div>
+        <div @fade class="item">two</div>
+        <div @fade class="item">three</div>
+        <div @fade class="item">four</div>
+        <div class="item" @fade>five</div>
+        <div class="item" @fade>six</div>
+        <div class="item" @fade>sevent</div>
+        <div class="item" @fade>eight</div>
+        <div class="item" @fade>nine</div>
+        <div class="item" @fade>ten</div>
+        <div class="item" @fade>eleven</div>
+        <div class="item" @fade>tweleve</div>
+        <div class="item" @fade>thirteen</div>
+        <div class="item" @fade>fourteen</div>
+        <div class="item" @fade>fifteen</div>
+        <div class="item" @fade>sixteen</div>
+    </div>
+    <!-- arrow buttons -->
+    <div class="next" (click)="transitionNext()"><mat-icon>navigate_next</mat-icon></div>
+    <div class="prev" (click)="transitionPrev()"><mat-icon>navigate_before</mat-icon></div>
+</div>
+
+
+
+
+<!-- ======================= BOOTSTRAP MULTI CAROUSEL =========================== -->
+<div class="container-fluid">
+    <h1 class="text-center mb-3">Bootstrap Multi-Card Carousel</h1>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto">
+        <div class="carousel-item col-md-4 active">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f44242/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 1</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/418cf4/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 2</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/3ed846/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 3</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/42ebf4/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 4</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f49b41/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 5</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/f4f141/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 6</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="http://placehold.it/800x600/8e41f4/fff" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">Card 7</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <!-- END OF BOOTSTRAP MULTI CAROUSEL -->
+
+<app-carousel [number-of-slide-per-row]=3>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+    <div class="slide">fksdjfhsfsahd</div>
+</app-carousel>
+
+
+
+<!-- You can now use your library component in app.component.html -->
+<ngx-slick-carousel class="carousel" 
+#slickModal="slick-carousel" 
+[config]="slideConfig">
+<div ngxSlickItem *ngFor="let slide of slide" class="slide">
+<img src="{{ slide.img }}" alt="" width="100%">
+</div>
+</ngx-slick-carousel>
+
+<!-- <button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button> -->
