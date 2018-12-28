@@ -1,0 +1,13 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" class="sidenav" [fixedInViewport]="'fixed'" [fixedTopGap]="0"
+        [fixedBottomGap]="0">
+        <!-- sidebar goes here -->
+        <app-sidenav [sidenav]="sidenav"></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-header [sidenav]="sidenav"></app-header>
+        <app-home></app-home>
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>

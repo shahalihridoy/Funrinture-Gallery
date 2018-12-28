@@ -1,0 +1,66 @@
+<div class="sidebar">
+    <div class="close-icon">
+        <button mat-icon-button class="mat-warn" (click)="sidenav.toggle()"><mat-icon>close</mat-icon></button>
+      </div>
+      <mat-divider></mat-divider>
+      
+      <a mat-ripple class="link">home</a>
+      
+      <app-accordin [opened]="true">
+        <a class="head">fashion</a>
+        <a class="body">
+          <app-accordin>
+            <a class="head">men</a>
+            <a class="body">
+                <app-accordin>
+                    <a class="head">Casual</a>
+                    <a class="body">
+                      <a mat-ripple class="link">shirt</a>
+                      <a mat-ripple class="link">pant</a>
+                      <a mat-ripple class="link">t-shirt</a>
+                    </a>
+                  </app-accordin>
+              <!-- <a mat-ripple class="link">shirt</a>
+              <a mat-ripple class="link">pant</a>
+              <a mat-ripple class="link">t-shirt</a> -->
+            </a>
+          </app-accordin>
+      
+          <app-accordin>
+            <a class="head">women</a>
+            <a class="body">
+              <a mat-ripple class="link">shorts</a>
+              <a mat-ripple class="link">Saree</a>
+              <a mat-ripple class="link">cosmetics</a>
+            </a>
+          </app-accordin>
+      
+          <app-accordin>
+              <a class="head">kids</a>
+              <a class="body">
+                <a mat-ripple class="link">shirt</a>
+                <a mat-ripple class="link">pant</a>
+                <a mat-ripple class="link">t-shirt</a>
+              </a>
+            </app-accordin>
+        </a>
+      </app-accordin>
+      
+      <a mat-ripple class="link">jewellery</a>
+      
+      <app-accordin [opened]="true">
+        <a class="head">electronics</a>
+        <a class="body">
+          <a mat-ripple class="link">Computer</a>
+          <a mat-ripple class="link">Mobile</a>
+          <a mat-ripple class="link">Accessories</a>
+        </a>
+      </app-accordin>
+      
+      <a mat-ripple class="link">sports</a>
+      <a mat-ripple class="link">motors</a>
+      <a mat-ripple class="link">pages</a>
+      <a mat-ripple class="link">contact</a>
+      <a mat-ripple class="link">level-1</a>
+      <a mat-ripple class="link">miscellaneous</a>
+</div>

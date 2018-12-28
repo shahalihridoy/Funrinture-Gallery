@@ -1,0 +1,23 @@
+@import "../node_modules/@angular/material/theming";
+
+// =======================================================
+
+// define custom theme
+@include mat-core();
+
+$app-primary: mat-palette($mat-green, 700);
+$app-accent: mat-palette($mat-yellow, 700);
+$app-warn: mat-palette($mat-red, 500);
+
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+// define custom font
+$app-typography: mat-typography-config(
+    $font-family: 'Roboto, "Helvetica Neue", sans-serif'
+);
+
+@include angular-material-typography($app-typography);
+
+// ==============================================

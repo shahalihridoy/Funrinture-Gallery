@@ -1,0 +1,13 @@
+<div mat-ripple class="head" (click)="    this.opened = this.opened ? false : true">
+  <ng-content select=".head"></ng-content>
+  <span [@rotate]="opened ? '*' : 'collapsed'" class="dropdown-toggle" *ngIf="needed"></span>
+</div>
+
+
+<div [@collapse]="opened ? '*' : 'collapsed'" class="body-content">
+  <ng-content select=".body"></ng-content>
+</div>
+
+<!-- <div @test class="body-content" *ngIf="opened">
+  <ng-content select=".body"></ng-content>
+</div> -->

@@ -1,0 +1,16 @@
+@import '../../sass/mixins.scss';
+
+.head {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    text-transform: uppercase;
+    @include link-font;
+    padding: 0 16px 0 16px;
+    line-height: 36px;
+}
+
+.body-content {
+    position: relative;
+    padding-left: 16px;
+}

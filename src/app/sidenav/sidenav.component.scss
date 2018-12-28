@@ -1,0 +1,55 @@
+@import '../../sass/mixins.scss';
+
+.link {
+    display: flex;
+    flex-grow: 1;
+    text-transform: uppercase;
+    @include link-font;
+    padding: 0 16px 0 16px;
+    line-height: 36px;
+}
+
+button {
+    outline: none;
+}
+
+.close-icon {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-bottom: 8px;
+}
+
+mat-divider::after {
+    content: "";
+    display: block;
+    padding-top: 8px;
+}
+
+
+.sidebar {
+    height: 100%;
+    // overflow: auto;  
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 4px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.37);
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
