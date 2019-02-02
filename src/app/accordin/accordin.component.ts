@@ -7,20 +7,19 @@ import { trigger, state, style, transition, animate, query, animation } from '@a
   styleUrls: ['./accordin.component.scss'],
   animations: [
     trigger('test', [
+      state('void',style({
+        height:0,
+        overflow:'hidden'
+      })),
+      state('*',style({
+        height:'*',
+        overflow:'auto'
+      })),
       transition('void => *', [
-        style({
-          // initial style when animation starts
-          height: 0,
-          overflow: 'auto'
-        }),
-        animate(250)
+        animate('250ms ease-out')
       ]),
       transition('* => void', [
-        animate(250, style({
-          // final style when animation ends
-          height: 0,
-          overflow: 'hidden'
-        }))
+        animate('250ms ease-in')
       ])
     ]),
 
@@ -48,8 +47,15 @@ import { trigger, state, style, transition, animate, query, animation } from '@a
       })),
 
       transition('* <=> collapsed', [
-        animate(250)
-      ])
+        animate('250ms ease')
+      ]),
+      // transition('collapsed => *', [
+      //   animate('5s ease-out',style({
+      //     height: '*',
+      //     overflow: 'auto'
+      //   }))
+      // ])
+
     ])
   ]
 })

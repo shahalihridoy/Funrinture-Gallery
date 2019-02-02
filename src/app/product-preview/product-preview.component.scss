@@ -1,0 +1,50 @@
+@import "../../sass/mixins.scss";
+
+::ng-deep .cdk-overlay-pane {
+    position: relative !important;
+    width: 80%;
+}
+
+.close-button {
+    position: absolute;
+    background: red;
+    color: white;
+    outline: none;
+    right: -14px;
+    top: -14px;
+    @include drop-shadow;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+
+    .image, .info {
+        flex-grow: 1;
+        width: 50%;
+    }
+}
+
+.image {
+    position: relative;
+}
+
+.next, .prev {
+    display: block;
+    position: absolute;
+    background: white;
+    color: rgba($color: #000000, $alpha: 0.8);
+    border-radius: 50%;
+    outline: none;
+    z-index: 1;
+    top: calc(50% - 20px);
+    @include drop-shadow;
+}
+
+.next {
+    right: 0;
+}
+.prev {
+    left: 0;
+}

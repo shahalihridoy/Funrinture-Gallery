@@ -1,6 +1,5 @@
 @import '../../sass/variables.scss';
 @import '../../sass/mixins.scss';
-
 .main-slider {
     display: block;
     width: calc(100% - 40px);
@@ -14,15 +13,8 @@
 
 // ngx-bootstrap doesn't support custom templates for carousel
 ::ng-deep .carousel {
-    &:hover {
-        ::ng-deep .carousel-control-prev,
-        ::ng-deep .carousel-control-next {
-            display: block;
-        }
-    }
     ::ng-deep .carousel-control-prev,
     ::ng-deep .carousel-control-next {
-        display: none;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -45,6 +37,103 @@
     }
 }
 
+.price-rating {
+    padding-bottom: 10px;   
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    p,del,div {
+        vertical-align: middle;
+    }
+}
+.chip {
+    display: block;
+    position: absolute;
+    padding: 5px 10px;
+    top: 8px;
+    right: 8px;
+    line-height: 22px;
+    color: white;
+    border-radius: 22px;
+    background: #f73939;
+    @include card-shadow;
+    z-index: 1;
+}
+.icons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+    button {
+        outline: none;
+    }
+    button:hover {
+        background: rgba($color: #000000, $alpha: 0.1);
+    }
+}
+
+.ass {
+    margin: 10px 0px;
+    position: relative;
+    text-align: center;
+
+    mat-divider {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .slide {
+        margin: 5px 0px;
+    }
+
+    .next, .prev {
+        display: block;
+        position: absolute;
+        background: white;
+        color: rgba($color: #000000, $alpha: 1);
+        border-radius: 50%;
+        outline: none;
+        z-index: 1;
+        top: calc(50% - 20px);
+        @include drop-shadow;
+    }
+
+    .next {
+        right: 24px;
+    }
+    .prev {
+        left: 24px;
+    }
+
+    .slick-slide {
+        margin-left:20px !important;
+      }
+    
+      /* the parent */
+      .slick-list {
+        margin-left:-20px !important;
+      }
+}
+
+::ng-deep .slick-prev {
+    left: 3% !important;
+    color:red;
+    background: $p-color;
+    z-index: 1;
+  }
+  ::ng-deep .slick-next {
+    right: 3% !important;
+    color:white;
+    background: $p-color;
+    z-index: 1;
+  }
+
 // business policy
 .policy-info {
     padding: 20px;
@@ -52,21 +141,18 @@
     margin-top: 25px;
     background: darken($color: $background, $amount: 3);
     width: calc(100% - 40px);
-
     .policy-icon {
         display: inline-block;
         font-size: 65px;
         height: 65px;
         width: 65px;
         vertical-align: middle;
-
         @include mq(680px) {
             font-size: 45px;
             height: 45px;
             width: 45px;
         }
     }
-
     .policy {
         display: inline-block;
         margin-top: 15px;
@@ -74,14 +160,12 @@
         vertical-align: middle;
         text-align: left;
         width: calc(100% - 75px);
-
         @include mq(680px) {
             width: calc(100% - 55px);
             p {
                 font-size: 13px;
             }
         }
-
         span {
             @include title-font;
             text-transform: capitalize;
@@ -91,18 +175,16 @@
         }
     }
 }
+
 // business policy ends here
-
-
 // tiles of colleciton
 .tiles {
     position: relative;
     padding: 0px 20px;
     margin-top: 25px;
 }
+
 // tiles of collection ends here
-
-
 // suggestion tab
 .suggestion {
     position: relative;
@@ -110,17 +192,16 @@
     margin-top: 25px;
 }
 
-::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, ::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar,
+::ng-deep .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: $p-color;
 }
 
 ::ng-deep .mat-tab-label .mat-tab-label-content {
     @include title-font;
 }
+
 // suggestion tab ends here
-
-
-
 // brands carousel
 .custom-carousel {
     position: relative;
@@ -129,14 +210,12 @@
     height: 320px;
     background: green;
     overflow: hidden;
-
     .content-box {
         display: block;
         width: 6000px;
         background: violet;
         transition: transform 500ms ease-in;
-
-        .item{
+        .item {
             display: inline-block;
             text-align: center;
             font-size: 3em;
@@ -148,13 +227,12 @@
             margin: 10px;
         }
     }
-
-    .next , .prev {
+    .next,
+    .prev {
         position: absolute;
         top: calc(50% - 50px);
         cursor: pointer;
         z-index: 100;
-
         ::ng-deep mat-icon {
             color: red;
             font-size: 100px;
@@ -164,7 +242,6 @@
             width: 100px;
         }
     }
-
     .next {
         right: 0;
     }
@@ -177,63 +254,55 @@
 @media (min-width: 768px) {
     /* show 3 items */
     .carousel-inner .active,
-    .carousel-inner .active + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item {
-      display: block;
+    .carousel-inner .active+.carousel-item,
+    .carousel-inner .active+.carousel-item+.carousel-item {
+        display: block;
     }
-  
     .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
-    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
-      transition: none;
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item {
+        transition: none;
     }
-  
     .carousel-inner .carousel-item-next,
     .carousel-inner .carousel-item-prev {
-      position: relative;
-      transform: translate3d(0, 0, 0);
+        position: relative;
+        transform: translate3d(0, 0, 0);
     }
-  
-    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
-      position: absolute;
-      top: 0;
-      right: -33.3333%;
-      z-index: -1;
-      display: block;
-      visibility: visible;
+    .carousel-inner .active.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
     }
-  
     /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .carousel-item-next.carousel-item-left + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
-      position: relative;
-      transform: translate3d(-100%, 0, 0);
-      visibility: visible;
+    .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left+.carousel-item,
+    .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+    .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
     }
-  
     /* farthest right hidden item must be abso position for animations */
     .carousel-inner .carousel-item-prev.carousel-item-right {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      display: block;
-      visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
     }
-  
     /* right or prev direction */
-    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .carousel-item-prev.carousel-item-right + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
-      position: relative;
-      transform: translate3d(100%, 0, 0);
-      visibility: visible;
-      display: block;
-      visibility: visible;
+    .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right+.carousel-item,
+    .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+    .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
     }
-  }
-  
-  
+}

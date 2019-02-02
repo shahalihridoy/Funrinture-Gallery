@@ -31,19 +31,25 @@ header {
     vertical-align: middle;
 }
 
+button {
+    outline: none;
+}
+
+.mat-menu-item {
+    height: 36px;
+    line-height: 36px;
+}
+
 #top-header {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-top: 8px;
 
-    .row {
-        box-sizing: content-box;
-        padding: 5px 0px;
-        border-bottom: 1px dotted darken($color: white, $amount: 27);
-    }
-
-    span {
-        position: relative;
-        color: #ffffff;
-        margin-right: 15px;
-        font-weight: 400;
+    span, div {
+        text-align: center;
+        color: white;
+        flex-grow: 1;
+        cursor: pointer;
     }
 
     #menu {
@@ -101,6 +107,11 @@ header {
                 outline: none;
             }
 
+            // option, optgroup {
+            //     @include link-font;
+            //     height: 36px !important;
+            //     line-height: 36px !important;
+            // }
             .input {
                 // width: calc(100% - 260px);
                 height: 42px;
@@ -150,7 +161,7 @@ header {
 
 // NAVIGATION BAR
 nav {
-    background: $background;
+    background: rgba($color: #000000, $alpha: 0.03);
     text-align: center;
     @include drop-shadow;
 
@@ -169,11 +180,15 @@ nav {
                 display: block;
                 padding: 15px;
                 text-transform: uppercase;
-                color: $p-color;
+                color: $font;
                 font-weight: 500;
 
                 &:hover {
-                    background: darken($color: $background, $amount: 3);
+                    background: rgba($color: #000000, $alpha: 0.075);
+                }
+
+                &:focus {
+                    color: $p-color;
                 }
             }
         }

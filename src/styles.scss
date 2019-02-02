@@ -10,6 +10,16 @@ html, body {
     width: 100%;
 }
 
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    * {
+        flex-grow: 1;
+        flex-shrink: 1;
+        text-align: center;
+    }
+}
+
 ul,
 li,
 a,

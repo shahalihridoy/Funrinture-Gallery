@@ -17,7 +17,8 @@ import {
   MatDividerModule,
   MatChipsModule,
   MatPaginatorModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 @NgModule({
@@ -52,7 +53,7 @@ import {
     MatSidenavModule,
     // MatSliderModule,
     // MatSlideToggleModule,
-    // MatSnackBarModule,
+    MatSnackBarModule,
     // MatSortModule,
     // MatStepperModule,
     // MatTableModule,

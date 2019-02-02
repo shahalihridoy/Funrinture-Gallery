@@ -3,49 +3,52 @@
 
     <!-- TOP HEADER -->
     <div id="top-header">
-        <div class="row">
+        <!-- menu icon for mobile site -->
+        <span id="menu">
+            <mat-icon class="mat-icon" (click)="sidenav.toggle()">menu</mat-icon>
+        </span>
+        <!-- /menu icon for mobile site -->
 
-            <div class="col-md-4">
+        <span><i class="fa fa-phone"></i> Hotline: 01992057252</span>
 
-                <!-- menu icon for mobile site -->
-                <span id="menu">
-                    <mat-icon class="mat-icon" (click)="sidenav.toggle()">menu</mat-icon>
-                </span>
-                <!-- /menu icon for mobile site -->
+        <!-- welcome note -->
+        <span>Welcome to Furniture Gallery</span>
+        <!-- welcome note -->
 
-                <span><i class="fa fa-phone"></i> Hotline: 01992057252</span>
-
+        <div class="flex">
+            <div class="dollar" mat-ripple>
+                <span mat-ripple class="dropdown-toggle" [matMenuTriggerFor]="currency"><i class="fa fa-dollar"></i> USD</span>
+                <mat-menu #currency="matMenu">
+                        <button mat-menu-item>Insects</button>
+                        <button mat-menu-item>Molluscs</button>
+                        <button mat-menu-item>Crusta</button>
+                        <button mat-menu-item>Corals</button>
+                        <button mat-menu-item>Arachnids</button>
+                        <button mat-menu-item>Velvet</button>
+                        <button mat-menu-item>Horseshoe</button>
+                </mat-menu>
             </div>
-
-            <!-- welcome note -->
-            <div class="col-md-4 col-lg-4">
-                <span class="right">Welcome to Furniture Gallery</span>
-            </div>
-            <!-- welcome note -->
 
             <!-- user account -->
-            <div class="col-md-4">
-
-                <span class="dropdown-toggle"><i class="fa fa-dollar"></i> USD</span>
-
-                <div class="btn-group icon-btn user-account" dropdown>
-                    <span id="button-basic" mat-ripple dropdownToggle type="button" class="dropdown-toggle"
-                        aria-controls="dropdown-basic">
-                        <mat-icon class="mat-icon">person</mat-icon> My Account
+            <div class="user-account" mat-ripple>
+                    <span [matMenuTriggerFor]="user_account" class="dropdown-toggle">
+                        <!-- <mat-icon class="mat-icon">person</mat-icon>  -->
+                        My Account
                     </span>
-                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
-                        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li class="divider dropdown-divider"></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-                        </li>
-                    </ul>
-                </div>
+                <mat-menu #user_account="matMenu">
+                    <button mat-menu-item>Insects</button>
+                    <button mat-menu-item>Molluscs</button>
+                    <button mat-menu-item>Crustaceans</button>
+                    <button mat-menu-item>Corals</button>
+                    <button mat-menu-item>Arachnids</button>
+                    <button mat-menu-item>Velvet worms</button>
+                    <button mat-menu-item>Horseshoe crabs</button>
+                </mat-menu>
             </div>
             <!-- /user account -->
 
         </div>
+
     </div>
     <!-- /TOP HEADER -->
 
@@ -93,7 +96,8 @@
                         <mat-icon class="mat-icon">shopping_cart</mat-icon>
                         Shopping Cart
                     </span>
-                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-basic">
                         <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
                         <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
                         <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
@@ -117,25 +121,25 @@
 <!-- NAVIGATION BAR -->
 <nav>
     <ul>
-        <li  mat-ripple><a href="">home</a></li>
-        <li  mat-ripple><a href="">fashion</a></li>
-        <li  mat-ripple><a href="">jewelery</a></li>
-        <li  mat-ripple><a href="">electronics</a></li>
-        <li  mat-ripple><a href="">sports</a></li>
-        <li  mat-ripple><a href="">motor</a></li>
-        <li  mat-ripple><a href="">pages</a></li>
-        <li  mat-ripple><a href="">conatct</a></li>
-        
+        <li mat-ripple><a href="#">home</a></li>
+        <li mat-ripple><a href="#">fashion</a></li>
+        <li mat-ripple><a href="#">jewelery</a></li>
+        <li mat-ripple><a href="#">electronics</a></li>
+        <li mat-ripple><a href="#">sports</a></li>
+        <li mat-ripple><a href="#">motor</a></li>
+        <li mat-ripple><a href="#">pages</a></li>
+        <li mat-ripple><a href="#">conatct</a></li>
+
         <li class="btn-group li" dropdown>
-                <a href id="basic-link" class="dropdown-toggle" dropdownToggle (click)="false"
-                   aria-controls="basic-link-dropdown" mat-ripple>shopping</a>
-                <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right"
-                    role="menu" aria-labelledby="basic-link">
-                  <li *ngFor="let choice of items">
+            <a href id="basic-link" class="dropdown-toggle" dropdownToggle (click)="false" aria-controls="basic-link-dropdown"
+                mat-ripple>shopping</a>
+            <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                aria-labelledby="basic-link">
+                <li *ngFor="let choice of items">
                     <a class="dropdown-item" href="#">{{choice}}</a>
-                  </li>
-                </ul>
-            </li>
+                </li>
+            </ul>
+        </li>
     </ul>
 </nav>
 <!-- /NAVIGATION BAR -->
