@@ -1,10 +1,11 @@
-import { Component, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ViewChild, ElementRef, Renderer2, OnInit } from '@angular/core';
 import * as $ from "jquery";
 import { trigger, transition, style, animate, state, animateChild } from '@angular/animations';
 import { NumberSymbol } from '@angular/common';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { ProductPreviewComponent } from '../product-preview/product-preview.component';
+import { SlideComponent } from 'ngx-bootstrap/carousel/public_api';
 
 @Component({
   selector: 'app-home',
@@ -32,8 +33,13 @@ export class HomeComponent {
   @ViewChild('test') slider: ElementRef;
   @ViewChild('inner') inner: ElementRef;
 
+  slidesPerView:number = 4;
+
   constructor(private dialog: MatDialog, private snackbar: MatSnackBar){}
 
+  ngOnInit(): void {
+    this.totalSlide = this.slide.length;
+  }
   slides = [
     { image: 'https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg' },
     { image: 'https://i.imgur.com/HlmWDMU.jpg' },
@@ -45,7 +51,7 @@ export class HomeComponent {
 
   public config: SwiperConfigInterface = {
     direction: 'horizontal',
-    slidesPerView: 4,
+    slidesPerView: this.slidesPerView,
     lazy: true,
     loop: true,
     initialSlide: 4,
@@ -136,6 +142,13 @@ export class HomeComponent {
       verticalPosition: "bottom",
       duration: 2000,
     });
+  }
+
+  currentSlide:number = 1;
+  totalSlide:number; // slide length
+  detectEdgeOfSlide(event){
+    this.currentSlide = event.currentSlide;
+    this.totalSlide = event.slick.slideCount;
   }
 
   // addSlide() {

@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { AccordinComponent } from './accordin/accordin.component';
+import { AccordinComponent } from "./components/accordin/accordin.component";
 import { NgIfDelayDirective } from './directives/ng-if-delay.directive';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { MaterialModule } from './modules/material/material.module';
@@ -18,6 +18,7 @@ import { CarouselDirective } from './directives/carousel.directive';
 import { ProductsComponent } from './products/products.component';
 import { RoutingModule } from './modules/routing/routing.module';
 import { ProductPreviewComponent } from './product-preview/product-preview.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
   @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductPreviewComponent } from './product-preview/product-preview.compo
     NgIfDelayDirective,
     CarouselDirective,
     ProductsComponent,
-    ProductPreviewComponent
+    ProductPreviewComponent,
+    SpinnerComponent
   ],  
   entryComponents: [
     ProductPreviewComponent

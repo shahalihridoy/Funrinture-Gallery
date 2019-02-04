@@ -43,13 +43,24 @@ button {
 #top-header {
     display: flex;
     flex-wrap: nowrap;
-    padding-top: 8px;
+    padding-top: 5px;
 
     span, div {
         text-align: center;
         color: white;
         flex-grow: 1;
         cursor: pointer;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 20px;
+        div {
+            flex-grow: 0;
+            margin: 0px 20px;
+            padding: 0px 10px;
+        }
     }
 
     #menu {
@@ -63,13 +74,21 @@ button {
 
     .user-account {
         position: relative;
-
         .mat-icon {
-            font-size: 20px;
+            font-size: 14px;
+            vertical-align: middle !important;
         }  
 
     }
 
+}
+
+.divider {
+    display: block;
+    height: 1px;
+    width: calc(100% - 40px);
+    margin: 5px 20px 0px 20px;
+    background: rgba($color: white, $alpha: 0.2);
 }
 
 // END OF TOP HEADER
@@ -79,32 +98,48 @@ button {
 // MID HEADER
 
 #mid-header {
+    display: flex;
+    justify-content: center;
     position: relative;
-    padding: 35px 0px;
+    padding: 30px 0px;
 
     h1 {
+        flex-grow: 0.5;
         font-size: 28px;
-        font-weight: bold;
+        padding: 0px 20px;
+        margin: 0px;
+        font-weight: 900;
         text-transform: uppercase;
         text-decoration: none;
         color: white;
         vertical-align: middle;
-        line-height: 42px;
+        line-height: 36px;
     }
 
     .header-search {
-        
+        flex-grow: 3;
+        display: flex;
+        justify-content: flex-start;
         form {
             position: relative;
+            width: 95%;
             vertical-align: middle;
 
             .input-select {
-                height: 42px;
+                height: 36px;
                 margin-right: -4px;
                 padding: 0px 15px;
                 border-radius: 42px 0px 0px 42px;
                 border: none;
                 outline: none;
+
+                option, optgroup {
+                    font-family: inherit;
+                    font-size: 14px;
+                    color: rgba($color: #000000, $alpha: 0.8);
+                    border-radius: 5px;
+                }
+
             }
 
             // option, optgroup {
@@ -114,15 +149,16 @@ button {
             // }
             .input {
                 // width: calc(100% - 260px);
-                height: 42px;
+                height: 36px;
                 margin-right: -4px;
                 padding: 0px 15px;
+                width: calc(100% - 200px);
                 border: none;
                 outline: none;
             }
 
             .search-btn {
-                height: 42px;
+                height: 36px;
                 width: 50px;
                 background: white;
                 color: $p-color;
@@ -136,15 +172,23 @@ button {
     }
 
     .cart {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
         position: relative;
 
         span {
             position: relative;
-            line-height: 42px;
+            line-height: 36px;
             padding: 0px 15px;
             vertical-align: middle;
             color: white;
             font-weight: 400;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba($color: black, $alpha: 0.03);
+            }
         }
 
         .mat-icon {
@@ -178,9 +222,10 @@ nav {
             // & > a selects only the direct child of li
             & > a {
                 display: block;
-                padding: 15px;
+                padding: 12px 15px;
                 text-transform: uppercase;
                 color: $font;
+                font-size: 13px;
                 font-weight: 500;
 
                 &:hover {
@@ -191,6 +236,12 @@ nav {
                     color: $p-color;
                 }
             }
+        }
+    }
+
+    @include mq(680px){
+        & {
+            display: none;
         }
     }
 }

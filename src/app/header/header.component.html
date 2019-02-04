@@ -3,6 +3,7 @@
 
     <!-- TOP HEADER -->
     <div id="top-header">
+
         <!-- menu icon for mobile site -->
         <span id="menu">
             <mat-icon class="mat-icon" (click)="sidenav.toggle()">menu</mat-icon>
@@ -16,9 +17,10 @@
         <!-- welcome note -->
 
         <div class="flex">
+
             <div class="dollar" mat-ripple>
                 <span mat-ripple class="dropdown-toggle" [matMenuTriggerFor]="currency"><i class="fa fa-dollar"></i> USD</span>
-                <mat-menu #currency="matMenu">
+                <mat-menu #currency="matMenu" [xPosition]="'before'">
                         <button mat-menu-item>Insects</button>
                         <button mat-menu-item>Molluscs</button>
                         <button mat-menu-item>Crusta</button>
@@ -32,10 +34,10 @@
             <!-- user account -->
             <div class="user-account" mat-ripple>
                     <span [matMenuTriggerFor]="user_account" class="dropdown-toggle">
-                        <!-- <mat-icon class="mat-icon">person</mat-icon>  -->
+                        <mat-icon class="mat-icon">person</mat-icon> 
                         My Account
                     </span>
-                <mat-menu #user_account="matMenu">
+                <mat-menu #user_account="matMenu" [xPosition]="'before'">
                     <button mat-menu-item>Insects</button>
                     <button mat-menu-item>Molluscs</button>
                     <button mat-menu-item>Crustaceans</button>
@@ -52,20 +54,16 @@
     </div>
     <!-- /TOP HEADER -->
 
-
+    <div class="divider"></div>
 
     <!-- MID HEADER -->
     <div id="mid-header">
-        <div class="row">
 
             <!-- ICON AND NAME -->
-            <div class="col-md-4">
                 <h1>Furniture Gallery</h1>
-            </div>
             <!-- /ICON AND NAME -->
 
             <!-- SEARCH BAR -->
-            <div class="col-md-4 col-lg-4">
                 <div class="header-search">
                     <form>
                         <select class="input-select">
@@ -85,12 +83,10 @@
                         </button>
                     </form>
                 </div>
-            </div>
             <!-- /SEARCH BAR -->
 
             <!-- SHOPPING CART -->
-            <div class="col-md-4">
-                <div class="btn-group icon-btn cart" dropdown>
+                <div class="cart" dropdown>
                     <span id="button-basic" mat-ripple dropdownToggle type="button" class="dropdown-toggle"
                         aria-controls="dropdown-basic">
                         <mat-icon class="mat-icon">shopping_cart</mat-icon>
@@ -106,10 +102,8 @@
                         </li>
                     </ul>
                 </div>
-            </div>
             <!-- /SHOPPING CART -->
 
-        </div>
     </div>
     <!-- /MID HEADER -->
 

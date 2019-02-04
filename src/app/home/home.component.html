@@ -9,6 +9,7 @@
 </carousel>
 <!-- end of top slider -->
 
+
 <!-- business policy information -->
 <div class="container-fluid policy-info">
     <div class="row">
@@ -115,7 +116,7 @@
 
 
 <div class="ass">
-    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <ngx-slick-carousel class="carousel" [config]="slideConfig" (afterChange)="detectEdgeOfSlide($event)">
         <div ngxSlickItem *ngFor="let slide of slide" class="slide">
             <mat-card>
                 <div class="chip">20% OFF</div>
@@ -143,10 +144,10 @@
             </mat-card>
         </div>
     </ngx-slick-carousel>
-    <button mat-icon-button class="next">
+    <button mat-icon-button class="next" [hidden]=" !(totalSlide - currentSlide - slidesPerView -1> 0) ">
         <mat-icon>navigate_next</mat-icon>
     </button>
-    <button mat-icon-button class="prev">
+    <button mat-icon-button class="prev" [hidden]="!(currentSlide > 0)">
         <mat-icon>navigate_before</mat-icon>
     </button>
 </div>
@@ -198,4 +199,7 @@
             </div>
         </div>
     </div>
+</div> -->
+<!-- <div style="background:gray;">
+    <app-spinner></app-spinner>
 </div> -->

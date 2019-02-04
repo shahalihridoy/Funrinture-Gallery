@@ -3,6 +3,7 @@
 ::ng-deep .cdk-overlay-pane {
     position: relative !important;
     width: 80%;
+    // height: 80vh;
 }
 
 .close-button {
@@ -23,6 +24,7 @@
     .image, .info {
         flex-grow: 1;
         width: 50%;
+        flex-basis: 300px;
     }
 }
 
