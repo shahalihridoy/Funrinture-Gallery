@@ -16,6 +16,7 @@ import {
   MatDialogModule,
   MatDividerModule,
   MatChipsModule,
+  MatTableModule,
   MatPaginatorModule,
   MatSidenavModule,
   MatSnackBarModule
@@ -56,7 +57,7 @@ import {
     MatSnackBarModule,
     // MatSortModule,
     // MatStepperModule,
-    // MatTableModule,
+    MatTableModule,
     MatTabsModule,
     MatToolbarModule
     // MatTooltipModule,

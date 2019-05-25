@@ -13,4 +13,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  test(event){
+    console.log(event.target.innerText);
+  }
+
 }

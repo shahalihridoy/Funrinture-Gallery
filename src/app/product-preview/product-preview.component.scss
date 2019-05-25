@@ -2,7 +2,12 @@
 
 ::ng-deep .cdk-overlay-pane {
     position: relative !important;
-    width: 80%;
+    min-width: 80%;
+    min-height: 60vh;
+
+    @include mq(680px){
+        min-height: 40vh;
+    }
     // height: 80vh;
 }
 

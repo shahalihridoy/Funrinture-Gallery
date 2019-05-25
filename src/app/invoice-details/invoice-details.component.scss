@@ -1,0 +1,57 @@
+.main-card {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.mat-divider {
+    position: relative !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.order-info,
+.billing-address {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    h4 {
+        margin-bottom: 0.5rem;
+        font-weight: 700 !important;
+    }
+    div:last-child {
+        text-align: right;
+    }
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.mat-header-cell {
+    font-size: 14px !important;
+}
+
+.custom-row {
+    padding-top: 20px;
+    flex-direction: column !important;
+    align-items: flex-start;
+}
+
+.total-cost {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    div {
+        margin-right: 20px;
+    }
+}

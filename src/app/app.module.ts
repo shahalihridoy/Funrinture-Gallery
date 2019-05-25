@@ -19,6 +19,19 @@ import { ProductsComponent } from './products/products.component';
 import { RoutingModule } from './modules/routing/routing.module';
 import { ProductPreviewComponent } from './product-preview/product-preview.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { InvoiceListComponent } from './invoice-list/invoice-list.component';
+import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
+import { Routes, RouterModule } from '@angular/router';
+import { SharedService } from './services/shared-service.service';
+
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full'},
+  { path: 'home', component: HomeComponent, pathMatch: 'full'},
+  { path: 'invoice/:id', component: InvoiceDetailsComponent, pathMatch: 'full'},
+  { path: 'invoice', component: InvoiceListComponent, pathMatch: 'full'},
+];
+
 
   @NgModule({
   declarations: [
@@ -33,7 +46,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     CarouselDirective,
     ProductsComponent,
     ProductPreviewComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    InvoiceListComponent,
+    InvoiceDetailsComponent
   ],  
   entryComponents: [
     ProductPreviewComponent
@@ -45,9 +60,10 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     SlickCarouselModule,
     MaterialModule,
     NgxModule,
-    RoutingModule
+    RoutingModule,
+    RouterModule.forRoot(appRoutes,{ enableTracing: false })
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

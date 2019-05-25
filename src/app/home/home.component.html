@@ -11,46 +11,45 @@
 
 
 <!-- business policy information -->
-<div class="container-fluid policy-info">
-    <div class="row">
-        <div class="col-md-6 col-lg-6">
+<div class="policy-info">
+    <div class="col1">
+        <div class="item">
             <mat-icon class="policy-icon">
                 local_shipping
             </mat-icon>
             <div class="policy">
                 <span>Free Shipping</span>
-                <p>Free shipping within 24 hours for free</p>
+                <p>Free shipping on all orders over $99</p>
             </div>
         </div>
-        <div class="col-md-6 col-lg-6">
+        <div class="item">
             <mat-icon class="policy-icon">
                 redeem
             </mat-icon>
             <div class="policy">
-                <span>Free Shipping</span>
-                <p>Free shipping within 24 hours for freeFree shipping within 24 hours for free Free shipping within 24
-                    hours for free</p>
+                <span>bonus plus</span>
+                <p>Make fun of shopping and collect bonuses</p>
             </div>
         </div>
+    </div>
 
-        <div class="w-100"></div>
-
-        <div class="col-md-6 col-lg-6">
+    <div class="col2">
+        <div class="item">
             <mat-icon class="policy-icon">
                 restore
             </mat-icon>
             <div class="policy">
-                <span>Free Shipping</span>
-                <p>Free shipping within 24 hours for free</p>
+                <span>MONEY BACK GUARANTEE</span>
+                <p>30 Days money return guarantee</p>
             </div>
         </div>
-        <div class="col-md-6 col-lg-6">
-            <mat-icon class="policy-icon">
+        <div class="item">
+            <mat-icon class="policy-icon circle">
                 attach_money
             </mat-icon>
             <div class="policy">
-                <span>Free Shipping</span>
-                <p>Free shipping within 24 hours for free Free shipping within 24 hours for free</p>
+                <span>ONLINE SUPPORT 24/7</span>
+                <p>Call us: (+100) 123 456 7890</p>
             </div>
         </div>
     </div>
@@ -95,7 +94,42 @@
 <!-- top rated / sale / best for you -->
 <mat-tab-group mat-stretch-tabs class="suggestion">
     <mat-tab label="First" mat-ripple>
-
+            <div class="product-carousel">
+                <ngx-slick-carousel class="carousel" [config]="slideConfig" (afterChange)="detectEdgeOfSlide($event)">
+                    <div ngxSlickItem *ngFor="let slide of slide" class="slide">
+                        <mat-card>
+                            <div class="chip">20% OFF</div>
+                            <img src="{{ slide.img }}">
+                            <h4>Electronics</h4>
+                            <h2>Keyboard</h2>
+                            <div class="price-rating">
+                                <del>$2500</del>
+                                <div class="rating-star">
+                                    <mat-icon>star</mat-icon>
+                                    <mat-icon>star</mat-icon>
+                                    <mat-icon>star</mat-icon>
+                                    <mat-icon>star</mat-icon>
+                                    <mat-icon>star</mat-icon>
+                                    <div style="text-align: right;">4 ratings</div>
+                                </div>
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div class="icons">
+                                <button mat-icon-button (click)="openSnackBar()"><mat-icon>favorite</mat-icon></button>
+                                <button mat-icon-button><mat-icon>shopping_cart</mat-icon></button>
+                                <button mat-icon-button><mat-icon>compare</mat-icon></button>
+                                <button mat-icon-button (click)="openPreviewDialogue()"><mat-icon>remove_red_eye</mat-icon></button>
+                            </div>
+                        </mat-card>
+                    </div>
+                    </ngx-slick-carousel>
+                    <button mat-icon-button class="next" [hidden]=" !(totalSlide - currentSlide - slidesPerView -1> 0) ">
+                        <mat-icon>navigate_next</mat-icon>
+                    </button>
+                    <button mat-icon-button class="prev" [hidden]="!(currentSlide > 0)">
+                        <mat-icon>navigate_before</mat-icon>
+                    </button>
+                </div>
     </mat-tab>
     <mat-tab label="Second" mat-ripple>
         <div style="margin:10px;height: 400px; background-color: green;">test</div>
@@ -113,44 +147,6 @@
         <div style="margin:10px;height: 400px; background-color: gold;">test</div>
     </mat-tab>
 </mat-tab-group>
-
-
-<div class="ass">
-    <ngx-slick-carousel class="carousel" [config]="slideConfig" (afterChange)="detectEdgeOfSlide($event)">
-        <div ngxSlickItem *ngFor="let slide of slide" class="slide">
-            <mat-card>
-                <div class="chip">20% OFF</div>
-                <img src="{{ slide.img }}">
-                <h4>Electronics</h4>
-                <h2>Keyboard</h2>
-                <div class="price-rating">
-                    <del>$2500</del>
-                    <div class="rating-star">
-                        <mat-icon>star</mat-icon>
-                        <mat-icon>star</mat-icon>
-                        <mat-icon>star</mat-icon>
-                        <mat-icon>star</mat-icon>
-                        <mat-icon>star</mat-icon>
-                        <div style="text-align: right;">4 ratings</div>
-                    </div>
-                </div>
-                <mat-divider></mat-divider>
-                <div class="icons">
-                    <button mat-icon-button (click)="openSnackBar()"><mat-icon>favorite</mat-icon></button>
-                    <button mat-icon-button><mat-icon>shopping_cart</mat-icon></button>
-                    <button mat-icon-button><mat-icon>compare</mat-icon></button>
-                    <button mat-icon-button (click)="openPreviewDialogue()"><mat-icon>remove_red_eye</mat-icon></button>
-                </div>
-            </mat-card>
-        </div>
-    </ngx-slick-carousel>
-    <button mat-icon-button class="next" [hidden]=" !(totalSlide - currentSlide - slidesPerView -1> 0) ">
-        <mat-icon>navigate_next</mat-icon>
-    </button>
-    <button mat-icon-button class="prev" [hidden]="!(currentSlide > 0)">
-        <mat-icon>navigate_before</mat-icon>
-    </button>
-</div>
 
 <!-- <button (click)="addSlide()">Add</button>
 <button (click)="removeSlide()">Remove</button>
@@ -203,3 +199,22 @@
 <!-- <div style="background:gray;">
     <app-spinner></app-spinner>
 </div> -->
+
+
+<div class="new-item">
+    <div class="col1">
+        <div class="row1">wowwow</div>
+        <div class="row2">
+            <div>wow</div>
+            <div>wow</div>
+        </div>
+    </div>
+
+    <div class="col2">
+        <div class="row1">
+            <div>wow</div>
+            <div>wow</div>
+        </div>
+        <div class="row2">wow</div>
+    </div>
+</div>

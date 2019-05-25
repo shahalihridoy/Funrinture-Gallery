@@ -5,9 +5,10 @@
     width: calc(100% - 40px);
     height: 500px;
     margin: 0px 20px;
-    margin-top: 15px;
+    margin-top: 20px;
     @include mq(680px) {
-        height: cover;
+        height: 250px;
+        width: cover;
     }
 }
 
@@ -74,8 +75,8 @@
     }
 }
 
-.ass {
-    margin: 10px 0px;
+.product-carousel {
+    margin: 10px 1px;
     position: relative;
     text-align: center;
 
@@ -105,20 +106,20 @@
     }
 
     .next {
-        right: 24px;
+        right: 0px;
     }
     .prev {
-        left: 24px;
+        left: 0px;
     }
 
     .slick-slide {
         margin-left:20px !important;
       }
     
-      /* the parent */
-      .slick-list {
-        margin-left:-20px !important;
-      }
+    /* the parent */
+    ::ng-deep .slick-list {
+    margin-left:-20px !important;
+    }
 }
 
 ::ng-deep .slick-prev {
@@ -136,42 +137,76 @@
 
 // business policy
 .policy-info {
-    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
-    margin-top: 25px;
-    background: darken($color: $background, $amount: 3);
+    margin: 0px 20px;
+    margin-top: 30px;
+    background: rgba($color: #000000, $alpha: 0.1);
+    color: rgba($color: #000000, $alpha: 0.57);
     width: calc(100% - 40px);
+
+    .col1, .col2 {
+        flex: 1 1 400px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+            flex: 1 1 200px;
+            display: flex;
+            position: relative;
+            margin: 20px;
+        }
+    }
+
+    .circle {
+        box-sizing: content-box;
+        background: rgba($color: #000000, $alpha: 0.57);
+        border-radius: 50%;
+        overflow: hidden;
+        color: rgba($color: white, $alpha: 0.89);
+        font-size: 40px !important;
+        height: 40px !important;
+        width: 40px !important;
+    }
+
     .policy-icon {
-        display: inline-block;
-        font-size: 65px;
-        height: 65px;
-        width: 65px;
-        vertical-align: middle;
+        font-size: 45px;
+        height: 45px;
+        width: 45px;
+        
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+
         @include mq(680px) {
             font-size: 45px;
             height: 45px;
             width: 45px;
         }
     }
+
     .policy {
-        display: inline-block;
-        margin-top: 15px;
         margin-left: 10px;
-        vertical-align: middle;
-        text-align: left;
-        width: calc(100% - 75px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        span {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        p {
+            word-wrap: break-word;
+            margin: 0px;
+        }
+
         @include mq(680px) {
             width: calc(100% - 55px);
             p {
                 font-size: 13px;
             }
-        }
-        span {
-            @include title-font;
-            text-transform: capitalize;
-        }
-        p {
-            word-wrap: break-word;
         }
     }
 }
@@ -304,5 +339,53 @@
         visibility: visible;
         display: block;
         visibility: visible;
+    }
+}
+
+
+
+
+
+.new-item {
+    display: flex;
+    height: 80vh;
+    .col1 {
+        flex: 1 1 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        background: green;
+
+        .row1 {
+            flex: 2 1 auto;
+        }
+        .row2 {
+            flex: 1 1 auto;
+            display: flex;
+            div {
+                flex: 1 auto;
+                background: red;
+            }
+        }
+    }
+
+    .col2 {
+        flex: 2 auto;
+        display: flex;
+        flex-flow: column nowrap;
+        background: yellow;
+
+        .row1 {
+            flex: 1 auto;
+            display: flex;
+
+            div {
+                flex: 1 auto;
+                background: red;
+            }
+        }
+
+        .row2 {
+            flex: 2 auto;
+        }
     }
 }
